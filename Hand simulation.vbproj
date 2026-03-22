@@ -9,12 +9,6 @@
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 	</PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Extracting-information.vb" />
-    <Compile Remove="Public-private-information.vb" />
-    <Compile Remove="Using_the_EPBot.vb" />
-  </ItemGroup>
-
 	<!-- Kopiuj natywną DLL obok exe przy każdym buildzie -->
 	<ItemGroup>
 		<Content Include="EPBot.dll">
@@ -22,4 +16,21 @@
 		</Content>
 	</ItemGroup>
 
+	<ItemGroup>
+		<Compile Remove="Extracting-information.vb" />
+		<Compile Remove="Public-private-information.vb" />
+		<Compile Remove="Program.vb" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Update="Extracting-information.vb">
+			<ExcludeFromBuild>true</ExcludeFromBuild>
+		</Compile>
+		<Compile Update="Public-private-information.vb">
+			<ExcludeFromBuild>true</ExcludeFromBuild>
+		</Compile>
+		<Compile Update="Program.vb">
+			<ExcludeFromBuild>true</ExcludeFromBuild>
+		</Compile>
+	</ItemGroup>
+	
 </Project>
